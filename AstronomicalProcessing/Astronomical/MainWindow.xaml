@@ -5,8 +5,28 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:Astronomical"
         mc:Ignorable="d"
-        Title="Astronomical Processing" Height="450" Width="800">
-    <Grid>
-
-    </Grid>
+        Title="Astronomical Processing" Height="400" MinHeight="220" Width="370" MinWidth="370">
+    <DockPanel Margin="15" LastChildFill="True">
+        <DockPanel DockPanel.Dock="Left" Margin="5" LastChildFill="True">
+            <TextBlock Text="Data" TextAlignment="Center" DockPanel.Dock="Top"/>
+            <ListView x:Name="lbxDataList" Width="120"/>
+        </DockPanel>
+        <DockPanel DockPanel.Dock="Right" Margin="20" LastChildFill="True">
+            <StackPanel DockPanel.Dock="Top" Orientation="Vertical">
+                <WrapPanel Orientation="Horizontal">
+                    <Button x:Name="btnSearch" Content="Search:" Width="60"/>
+                    <TextBox x:Name="tbSearch" Width="90"/>
+                </WrapPanel>
+                <GridSplitter Height="20"/>
+                <Button x:Name="btnSort" Content="Sort" Width="60" HorizontalAlignment="Left"/>
+            </StackPanel>
+            <DockPanel DockPanel.Dock="Bottom" LastChildFill="True">
+                <WrapPanel DockPanel.Dock="Bottom" Orientation="Horizontal">
+                    <Button x:Name="btnEdit" Content="Edit Selected:" Width="90"/>
+                    <TextBox x:Name="tbEdit" Width="60"/>
+                </WrapPanel>
+                <GridSplitter DockPanel.Dock="Top"/>
+            </DockPanel>
+        </DockPanel>
+    </DockPanel>
 </Window>
