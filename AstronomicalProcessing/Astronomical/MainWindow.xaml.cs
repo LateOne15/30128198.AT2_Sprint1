@@ -1,4 +1,5 @@
-﻿using System.Text;
+﻿using System.ComponentModel;
+using System.Text;
 using System.Windows;
 using System.Windows.Controls;
 using System.Windows.Data;
@@ -51,17 +52,45 @@ namespace Astronomical
         private void btnSearch_Click(object sender, RoutedEventArgs e)
         {
 
+            // Search directly through C# implementations instead of Binary Seach
+            //int temp = int.Parse(tbSearch.Text);
+            //bool found = lbxDataList.Items.Contains(temp);
+            //if (found)
+            //{
+            //    lbxDataList.SelectedItem=temp;
+            //    DisplayMessage("Match found!", "Found");
+            //}
+            //else
+            //{
+            //    DisplayError("No match found in list.", "Unsuccessful");
+            //}
+            //tbSearch.Text = string.Empty;
         }
 
         private void btnSort_Click(object sender, RoutedEventArgs e)
         {
 
+
+            // Sort directly through C# implementations instead of Bubble Sort
+            //List<int> ints = new List<int>();
+            //foreach (int i in lbxDataList.Items)
+            //{
+            //    ints.Add(i);
+            //}
+            //ints.Sort();
+            //lbxDataList.Items.Clear();
+            //foreach (int i in ints)
+            //{
+            //    lbxDataList.Items.Add(i);
+            //}
         }
 
         private void btnEdit_Click(object sender, RoutedEventArgs e)
         {
-            lbxDataList.SelectedItem = tbEdit.Text;
-            tbEdit.Text= string.Empty;
+            int temp = int.Parse(tbEdit.Text);
+            lbxDataList.Items.Insert(lbxDataList.SelectedIndex, temp);
+            lbxDataList.Items.Remove(lbxDataList.SelectedItem);
+            tbEdit.Text=string.Empty;
         }
     }
 }
